@@ -14,6 +14,26 @@ namespace MathClasses
         {
             colour = 0;
         }
-
+        public byte GetAlpha()
+        {
+            return (byte)(colour >> 24);
+        }
+        public byte GetRed()
+        {
+            return (byte)(colour >> 16);
+        }
+        public byte GetGreen()
+        {
+            return (byte)(colour >> 8);
+        }
+        public byte GetBlue()
+        {
+            return (byte)colour;
+        }
+        public void GetAlpha(uint val)
+        {
+            colour = colour & (uint)0x00FFFFFF;
+            colour = colour | (val << 24);
+        }
     }
 }
